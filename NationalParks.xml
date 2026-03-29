@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<NationalParks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main/NationalParks.xsd">
+<NationalParks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main/NationalParks.xsd">
 
   <NationalPark Rating="4.9">
     <Name>Grand Canyon</Name>
@@ -19,7 +20,7 @@
     <Name>Yosemite</Name>
     <Phone>209-372-0200</Phone>
     <Phone>209-372-9999</Phone>
-    <Address>
+    <Address NearestAirport="Fresno">
       <Number>9035</Number>
       <Street>Village Drive</Street>
       <City>Yosemite Valley</City>
@@ -97,7 +98,7 @@
     <Name>Glacier</Name>
     <Phone>406-888-7800</Phone>
     <Phone>406-888-9999</Phone>
-    <Address>
+    <Address NearestAirport="Kalispell">
       <Number>64</Number>
       <Street>Grinnell Drive</Street>
       <City>West Glacier</City>
