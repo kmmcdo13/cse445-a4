@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<NationalParks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main/NationalParks.xsd">
+<NationalParks
+  xmlns="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main/NationalParks.xsd">
 
   <NationalPark Rating="4.9">
     <Name>Grand Canyon</Name>
@@ -46,7 +48,7 @@
     <Name>Yellowstone</Name>
     <Phone>307-344-7381</Phone>
     <Phone>307-344-9999</Phone>
-    <Address>
+    <Address NearestAirport="Bozeman">
       <Number>2</Number>
       <Street>Officer Row</Street>
       <City>Yellowstone National Park</City>
@@ -72,7 +74,7 @@
     <Name>Acadia</Name>
     <Phone>207-288-3338</Phone>
     <Phone>207-288-9999</Phone>
-    <Address>
+    <Address NearestAirport="Bangor">
       <Number>20</Number>
       <Street>McFarland Hill Drive</Street>
       <City>Bar Harbor</City>
@@ -124,12 +126,25 @@
     <Name>Bryce Canyon</Name>
     <Phone>435-834-5322</Phone>
     <Phone>435-834-9999</Phone>
-    <Address>
+    <Address NearestAirport="Cedar City">
       <Number>1</Number>
       <Street>Highway 63</Street>
       <City>Bryce</City>
       <State>UT</State>
       <Zip>84764</Zip>
+    </Address>
+  </NationalPark>
+
+  <NationalPark Rating="4.8">
+    <Name>Great Smoky Mountains</Name>
+    <Phone>865-436-1200</Phone>
+    <Phone>865-436-1294</Phone>
+    <Address NearestAirport="Knoxville">
+      <Number>107</Number>
+      <Street>Park Headquarters Road</Street>
+      <City>Gatlinburg</City>
+      <State>TN</State>
+      <Zip>37738</Zip>
     </Address>
   </NationalPark>
 
