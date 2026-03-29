@@ -1,63 +1,58 @@
-//tells the system this is an xml file and uses utf-8 encoding
 <?xml version="1.0" encoding="utf-8"?>
 
-//defines the schema
-//the default xmlns and namespace must match the xml file namespace
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main"
-  targetNamespace="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main"
-  elementFormDefault="qualified" attributeFormDefault="unqualified">
+           targetNamespace="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main"
+           xmlns="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main"
+           elementFormDefault="qualified">
 
-  //root element of the xml document
-  //everything in the xml file must be inside nationalparks
+  <!-- root element -->
   <xs:element name="NationalParks">
     <xs:complexType>
-
-      //elements must appear in this exact order (left to right)
       <xs:sequence>
 
-        //represents each park entry
-        //unbounded allows as many parks as needed (assignment requires 10+)
+        <!-- allows multiple national park entries -->
         <xs:element name="NationalPark" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
 
-              //min=1 and max=1 prevents missing names or duplicate name elements (each park must have exactly one name)
+              <!-- park name, required exactly once -->
               <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
 
-              //max=unbounded allows multiple phone numbers for the same park (each park must have at least one phone number )
+              <!-- phone number(s), at least one required -->
               <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
 
-              //groups address information together
+              <!-- address block -->
               <xs:element name="Address">
                 <xs:complexType>
                   <xs:sequence>
 
-                    //street number part of the address
+                    <!-- street number -->
                     <xs:element name="Number" type="xs:string"/>
 
-                    //street name
+                    <!-- street name -->
                     <xs:element name="Street" type="xs:string"/>
 
-                    //city location
+                    <!-- city -->
                     <xs:element name="City" type="xs:string"/>
 
-                    //state abbreviation (i.e. AZ, CA, UT, etc.)
+                    <!-- state -->
                     <xs:element name="State" type="xs:string"/>
 
-                    //zip code
+                    <!-- zip code -->
                     <xs:element name="Zip" type="xs:string"/>
+
                   </xs:sequence>
 
-                  //nearest airport is required, else validation will fail 
+                  <!-- required attribute for nearest airport -->
                   <xs:attribute name="NearestAirport" type="xs:string" use="required"/>
                 </xs:complexType>
               </xs:element>
+
             </xs:sequence>
 
-            //rating is optiional (some parks have it while others do not)
-            //xs:decimal ensures the value must be a number like "4.8" instead of text
+            <!-- optional rating attribute -->
             <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
+
           </xs:complexType>
         </xs:element>
 
