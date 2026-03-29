@@ -1,23 +1,45 @@
+//tells the system this is an xml file and uses utf-8 encoding
 <?xml version="1.0" encoding="utf-8"?>
+
 <NationalParks
+  //sets the main namespace for the xml file, must match the schema namespace
   xmlns="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main"
+
+  //adds the xml schema instance namespace (needed so schemalocation can be used)
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+  //links xml file to xsd file
+  //first url is the namespace and second url is the schema file location
   xsi:schemaLocation="https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main https://raw.githubusercontent.com/kmmcdo13/cse445-a4/main/NationalParks.xsd">
 
+  //first national park
   <NationalPark Rating="4.9">
+    //stores the name of the park
     <Name>Grand Canyon</Name>
+
+    //multiple phone elements, parks can have more than one contact number
     <Phone>928-638-7496</Phone>
     <Phone>888-297-2757</Phone>
     <Phone>866-499-2574</Phone>
+
+    //address groups all location information into one section
+    //nearestairport is included as an attribute on the address element
     <Address NearestAirport="Flagstaff">
+      //street number
       <Number>8</Number>
+      //street name
       <Street>S Entrance Road</Street>
+      //city name
       <City>Grand Canyon</City>
+      //state abbreviation
       <State>AZ</State>
+      //zip code
       <Zip>86023</Zip>
     </Address>
   </NationalPark>
 
+  //second national park
+  //in this example, rating is left out because it is optional in the schema 
   <NationalPark>
     <Name>Yosemite</Name>
     <Phone>209-372-0200</Phone>
@@ -31,6 +53,7 @@
     </Address>
   </NationalPark>
 
+  //third national park
   <NationalPark Rating="4.7">
     <Name>Zion</Name>
     <Phone>435-772-3256</Phone>
@@ -44,6 +67,7 @@
     </Address>
   </NationalPark>
 
+  //fourth national park
   <NationalPark>
     <Name>Yellowstone</Name>
     <Phone>307-344-7381</Phone>
@@ -57,6 +81,7 @@
     </Address>
   </NationalPark>
 
+  //fifth national park
   <NationalPark Rating="4.8">
     <Name>Rocky Mountain</Name>
     <Phone>970-586-1206</Phone>
@@ -70,6 +95,7 @@
     </Address>
   </NationalPark>
 
+  //sixth national park
   <NationalPark>
     <Name>Acadia</Name>
     <Phone>207-288-3338</Phone>
@@ -83,6 +109,7 @@
     </Address>
   </NationalPark>
 
+  //seventh national park
   <NationalPark Rating="4.6">
     <Name>Olympic</Name>
     <Phone>360-565-3130</Phone>
@@ -96,6 +123,7 @@
     </Address>
   </NationalPark>
 
+  //eighth national park
   <NationalPark>
     <Name>Glacier</Name>
     <Phone>406-888-7800</Phone>
@@ -109,6 +137,7 @@
     </Address>
   </NationalPark>
 
+  //ninth national park
   <NationalPark Rating="4.7">
     <Name>Arches</Name>
     <Phone>435-719-2299</Phone>
@@ -122,6 +151,7 @@
     </Address>
   </NationalPark>
 
+  //tenth national park
   <NationalPark>
     <Name>Bryce Canyon</Name>
     <Phone>435-834-5322</Phone>
@@ -135,6 +165,7 @@
     </Address>
   </NationalPark>
 
+  //eleventh national park
   <NationalPark Rating="4.8">
     <Name>Great Smoky Mountains</Name>
     <Phone>865-436-1200</Phone>
