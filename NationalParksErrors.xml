@@ -1,9 +1,20 @@
+//tells the system this is an xml file using utf-8 encoding
 <?xml version="1.0" encoding="utf-8"?>
+
+//error: root element is incorrect
+//should be nationalparks but is written as nationalpark, which breaks schema validation
 <NationalPark>
+
+  //valid structure here but still inside wrong root element
   <NationalPark Rating="4.9">
     <Name>Grand Canyon</Name>
+
+    //phones are correct here
     <Phone>928-638-7496</Phone>
     <Phone>888-297-2757</Phone>
+
+    //error: missing required nearestairport attribute in address
+    //schema requires this attribute but it is not included
     <Address>
       <Number>8</Number>
       <Street>S Entrance Road</Street>
@@ -13,8 +24,12 @@
     </Address>
   </NationalPark>
 
+  //second park entry
   <NationalPark Rating="4.8">
     <Name>Yosemite</Name>
+
+    //error: missing required phone element
+    //schema requires at least one phone number
     <Address NearestAirport="Fresno">
       <Number>9035</Number>
       <Street>Village Drive</Street>
@@ -24,16 +39,26 @@
     </Address>
   </NationalPark>
 
+  //third park entry
   <NationalPark Rating="4.7">
+
+    //error: duplicate name elements
+    //schema only allows one name per park
     <Name>Zion</Name>
     <Name>Zion Duplicate</Name>
+
     <Phone>435-772-3256</Phone>
     <Phone>435-772-7700</Phone>
+
+    //error: address tag is never closed
+    //missing </address> causes invalid xml structure
     <Address NearestAirport="St George">
       <Number>1</Number>
       <Street>Zion Park Blvd</Street>
       <City>Springdale</City>
       <State>UT</State>
       <Zip>84767</Zip>
+
+  //error: closing tags are mismatched because address was never closed
   </NationalPark>
 </NationalPark>
